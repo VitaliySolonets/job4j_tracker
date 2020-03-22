@@ -6,6 +6,7 @@ public class FindEl {
         for (int index = 0; index < value.length; index++) {
             if (value[index].equals(key)) {
                 rls = index;
+                break;
             }
         }
         if (rls == -1) {
