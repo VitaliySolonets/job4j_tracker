@@ -25,7 +25,7 @@ public class StartUI {
     }
 
     public static void main(String[] args) {
-        Input input = new ConsoleInput();
+        Input validate = new ValidateInput();
         Tracker tracker = new Tracker();
         //создаем массив с действиями.
         UserAction[] actions = {
@@ -37,6 +37,6 @@ public class StartUI {
                 new ShowAllItems(),
                 new EndOfTheProgram()
         };
-        new StartUI().init(input, tracker, actions);
+        new StartUI().init(validate, tracker, actions);
     }
 }
