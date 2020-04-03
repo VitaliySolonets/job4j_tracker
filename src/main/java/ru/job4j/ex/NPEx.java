@@ -6,8 +6,9 @@ public class NPEx {
         shops[0] = "Vitaly Solonets";
         for (int index = 0; index < shops.length; index++) {
             String el = shops[index];
-            if (el != null)
+            if (el != null) {
                 System.out.println(el + " has a size: " + el.length());
+            }
         }
     }
 }

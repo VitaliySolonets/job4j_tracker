@@ -25,7 +25,7 @@ public class FindEl {
             if (indexOf(values, key) != -1) {
                 sent(key, abuses);
             }
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

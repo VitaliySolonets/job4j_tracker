@@ -14,5 +14,8 @@ public interface Input {
      */
     int askInt(String question);
 
+    /**
+     * Запрашивает число пока пользователь не введет число от 0 до max.
+     */
     int askInt(String question, int max);
 }
