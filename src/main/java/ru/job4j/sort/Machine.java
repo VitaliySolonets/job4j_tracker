@@ -12,8 +12,8 @@ public class Machine {
         int[] rsl = new int[100];
         int size = 0;
         int sum = money - price;
-        while (sum > 0) {
-            for (int i = 0; i < cOINS.length; i++) {
+        for (int i = 0; i < cOINS.length; i++) {
+            while (sum > 0) {
                 if (sum - cOINS[i] < 0) {
                     continue;
                 } else {
