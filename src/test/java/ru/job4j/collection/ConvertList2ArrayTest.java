@@ -1,6 +1,5 @@
 package ru.job4j.collection;
 
-import collection.ConvertList2Array;
 import org.junit.Ignore;
 import org.junit.Test;
 
