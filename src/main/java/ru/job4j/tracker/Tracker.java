@@ -35,9 +35,9 @@ public class Tracker {
      */
     private int getIndexById(String id) {
         int index = -1;
-        for (Item item : this.items) {
-            if (item.getId().contains(id)) {
-                index = this.items.indexOf(item);
+        for (int i = 0; i < this.items.size(); i++) {
+            if (items.get(i).getId().contains(id)) {
+                index = i;
                 break;
             }
         }
@@ -76,15 +76,7 @@ public class Tracker {
      * @return true или false, удалось ли провести операцию
      */
     public boolean delete(String id) {
-        boolean result = false;
-        for (Item item : this.items) {
-            if (item.getId().contains(id)) {
-                this.items.remove(item);
-                result = true;
-                break;
-            }
-        }
-        return result;
+        return items.remove(this.items.contains(getIndexById(id)));
     }
 
     /**

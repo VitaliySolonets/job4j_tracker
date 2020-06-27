@@ -34,14 +34,13 @@ public class StartUI {
         Tracker tracker = new Tracker();
         //создаем массив с действиями.
         List<UserAction> actions = new ArrayList<>();
-        Arrays.asList(new CreateAction(),
-                new DeleteItem(),
-                new EditItem(),
-                new FindItemById(),
-                new FindItemsByName(),
-                new ShowAllItems(),
-                new EndOfTheProgram())
-        ;
+        actions.add(new CreateAction());
+        actions.add(new DeleteItem());
+        actions.add(new EditItem());
+        actions.add(new FindItemById());
+        actions.add(new FindItemsByName());
+        actions.add(new ShowAllItems());
+        actions.add(new EndOfTheProgram());
         new StartUI().init(validate, tracker, actions);
     }
 }
