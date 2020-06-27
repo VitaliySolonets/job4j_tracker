@@ -36,7 +36,7 @@ public class Tracker {
     private int getIndexById(String id) {
         int index = -1;
         for (int i = 0; i < this.items.size(); i++) {
-            if (items.get(i).getId().contains(id)) {
+            if (items.get(i).getId().equals(id)) {
                 index = i;
                 break;
             }
@@ -58,16 +58,6 @@ public class Tracker {
             items.set(index, item);
         }
         return res;
-        /*boolean result = false;
-        for (int i = 0; i < this.position; i++) {
-            if (this.items[i].getId().equals(id)) {
-                this.items[i] = item;
-                item.setId(id);
-                result = true;
-                break;
-            }
-        }
-        return result;*/
     }
 
     /**
@@ -76,7 +66,13 @@ public class Tracker {
      * @return true или false, удалось ли провести операцию
      */
     public boolean delete(String id) {
-        return items.remove(this.items.contains(getIndexById(id)));
+        int index = getIndexById(id);
+        boolean res = index != -1;
+        if (res) {
+            items.remove(index);
+        }
+        return res;
+        // return items.remove(this.items.contains(getIndexById(id)));
     }
 
     /**
