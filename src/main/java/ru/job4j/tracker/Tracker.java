@@ -90,7 +90,7 @@ public class Tracker {
     public List<Item> findByName(String key) {
         List<Item> rsl = new ArrayList<>();
         for (Item item : this.items) {
-            if (item.getName().contains(key)) {
+            if (item.getName().equals(key)) {
                 rsl.add(item);
             }
         }
@@ -103,7 +103,7 @@ public class Tracker {
     public Item findById(String id) {
         Item rsl = null;
         for (Item item : this.items) {
-            if (item.getId().contains(id)) {
+            if (item.getId().equals(id)) {
                 rsl = item;
             }
         }
