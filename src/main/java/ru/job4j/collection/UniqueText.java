@@ -4,21 +4,20 @@ import java.util.HashSet;
 
 public class UniqueText {
     public static boolean isEquals(String originText, String duplicateText) {
-        boolean rsl = false;
+        boolean rsl = true;
         String[] origin = originText.split(" ");
         String[] text = duplicateText.split(" ");
         HashSet<String> check = new HashSet<>();
-        for (String value:origin){
+        for (String value : origin) {
             check.add(value);
         }
-        for (String textValue:text){
-            for (String checkValue:check){
-                if (checkValue.contains(textValue)) {
-                    rsl = true;
-                    break;
-                }
+        for (String textValue : text) {
+            if (!check.contains(textValue)) {
+                rsl = false;
+                break;
             }
         }
+
         return rsl;
     }
 }
