@@ -49,19 +49,19 @@ public class JobTest {
     public void whenComparatorByNameAndPriority() {
         Comparator<Job> cmpNamePriority = new JobDescendingByName().thenComparing(new JobDescendingByPriority());
         int result = cmpNamePriority.compare(
-                new Job("Impl task", 0),
+                new Job("Fix bug", 0),
                 new Job("Fix bug", 1)
         );
-        assertThat(result, lessThan(0));
+        assertThat(result, greaterThan(0));
     }
 
     @Test
     public void whenCompareAscByNameAndPriority() {
         Comparator<Job> cmpAscNamePriority = new JobAscByName().thenComparing(new JobAscByPriority());
         int result = cmpAscNamePriority.compare(
-                new Job("Impl task", 0),
+                new Job("Fix bug", 0),
                 new Job("Fix bug", 1)
         );
-        assertThat(result, greaterThan(0));
+        assertThat(result, lessThan(0));
     }
 }
