@@ -56,4 +56,24 @@ public class StringCompareTest {
         );
         assertThat(rsl, lessThan(0));
     }
+
+    @Test
+    public void whenStringEmpty() {
+        StringCompare compare = new StringCompare();
+        int rsl = compare.compare(
+                "",
+                ""
+        );
+        assertThat(rsl, is(0));
+    }
+
+    @Test
+    public void whenEmptyStringLessThanComplete() {
+        StringCompare compare = new StringCompare();
+        int rsl = compare.compare(
+                "Ivanov",
+                ""
+        );
+        assertThat(rsl, greaterThan(0));
+    }
 }
