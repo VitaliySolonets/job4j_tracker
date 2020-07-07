@@ -58,18 +58,16 @@ public class TrackerTest {
 
     public void whenFindByNameThenReturnItemsSameName() {
         Tracker tracker = new Tracker();
-        Item item = new Item("test");
-        Item item1 = new Item("test2");
-        Item item2 = new Item("test");
-        tracker.add(item);
+        Item item0 = new Item("test0");
+        Item item1 = new Item("test1");
+        Item item2 = new Item("test0");
+        tracker.add(item0);
         tracker.add(item1);
         tracker.add(item2);
-        String key = "test";
-        List<Item> res = tracker.findByName(key);
-        Item[] expect = new Item[2];
-        expect[0] = item;
-        expect[1] = item2;
-        assertThat(res, is(expect));
+        List<Item> result = tracker.findByName("test0");
+        for (Item item : result) {
+            assertThat(item.getName(), is("test0"));
+        }
     }
 
     @Test
